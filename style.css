@@ -9,7 +9,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .logo span { color: var(--orange); }
 
 .nav-links { display: flex; align-items: center; gap: 15px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--text); font-weight: 600; }
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 14px; }
 .nav-btn { background: var(--orange); color: white !important; padding: 8px 16px; border-radius: 5px; }
 .nav-btn-outline { border: 1px solid var(--orange); color: var(--orange) !important; padding: 7px 15px; border-radius: 5px; }
 
@@ -17,13 +17,14 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .hero h1 { font-size: 48px; margin-bottom: 15px; }
 .orange { color: var(--orange); }
 
-.btn { padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+.btn { padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; cursor: pointer; }
 .btn-orange { background: var(--orange); color: white; }
 .btn-outline { border: 2px solid var(--orange); color: var(--orange); }
 
 .section-title { text-align: center; margin-bottom: 50px; font-size: 32px; font-weight: 700; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
+.services { padding: 80px 0; }
 .service-card { background: #fff; padding: 35px 25px; border-radius: 12px; text-align: center; border-top: 4px solid var(--orange); box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
 .service-card .icon { font-size: 40px; margin-bottom: 15px; }
 
@@ -32,59 +33,26 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .project-card img { width: 100%; height: 220px; object-fit: cover; }
 .p-content { padding: 20px; }
 
-.tag { font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+.tag { font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom: 8px; text-transform: uppercase; }
 .qgis { background: #fff0e0; color: #ff8c00; }
 .rs { background: #e0f0ff; color: #007bff; }
 .gee { background: #e0ffe0; color: #28a745; }
 .design { background: #ffe0f0; color: #d63384; }
+.survey { background: #f0e0ff; color: #6f42c1; }
 
-.survey { background: #f0e0ff; color: #6f42c1; } 
-/* Mobile View Fix for Buttons and Header */
+/* --- Mobile Responsive Fix --- */
 @media (max-width: 768px) {
-    header {
-        padding: 10px 0;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column; /* Logo aur Menu ko upar-neeche karne ke liye */
-        align-items: center;
-        gap: 15px;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column; /* Buttons ko stack karne ke liye */
-        width: 100%;
-        padding: 0;
-        gap: 10px; /* Buttons ke beech ka vertical space */
-        align-items: center;
-    }
-
-    .nav-links li {
-        width: 80%; /* Buttons ki width mobile par thodi badi dikhegi */
-        text-align: center;
-    }
-
-    /* Navbar buttons setting */
-    .nav-links li a {
-        display: block; /* Poore space ko clickable banane ke liye */
-        padding: 10px 0;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    /* Hero section buttons spacing */
-    .hero-btns {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .hero-btns .btn {
-        width: 200px; /* Mobile par buttons ek barabar size ke dikhenge */
-    }
+    header { padding: 10px 0; }
+    nav { flex-direction: column; gap: 15px; }
+    .nav-links { flex-direction: column; width: 100%; gap: 10px; }
+    .nav-links li { width: 80%; }
+    .nav-links li a { display: block; text-align: center; width: 100%; }
+    
+    .hero { height: auto; padding: 100px 0; }
+    .hero h1 { font-size: 32px; }
+    .hero-btns { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+    .hero-btns .btn { width: 220px; }
+    
+    .grid { grid-template-columns: 1fr !important; }
 }
 
