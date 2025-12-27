@@ -37,4 +37,46 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .rs { background: #e0f0ff; color: #007bff; }
 .gee { background: #e0ffe0; color: #28a745; }
 .design { background: #ffe0f0; color: #d63384; }
-.survey { background: #f0e0ff; color: #6f42c1; }
+
+.survey { background: #f0e0ff; color: #6f42c1; } 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Stack the Navigation Menu */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Adjust Hero Section Text */
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Force Grid to 1 Column on Mobile */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Service Cards and Project Cards full width */
+    .card, .project-card {
+        width: 100%;
+    }
+
+    /* Center Footer Social Links */
+    .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
