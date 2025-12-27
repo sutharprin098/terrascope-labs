@@ -39,44 +39,52 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .design { background: #ffe0f0; color: #d63384; }
 
 .survey { background: #f0e0ff; color: #6f42c1; } 
-/* Mobile Responsive Styles */
+/* Mobile View Fix for Buttons and Header */
 @media (max-width: 768px) {
-    /* Stack the Navigation Menu */
+    header {
+        padding: 10px 0;
+    }
+
     nav {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column; /* Logo aur Menu ko upar-neeche karne ke liye */
+        align-items: center;
         gap: 15px;
-        text-align: center;
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-
-    /* Adjust Hero Section Text */
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    /* Force Grid to 1 Column on Mobile */
-    .grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* Service Cards and Project Cards full width */
-    .card, .project-card {
-        width: 100%;
-    }
-
-    /* Center Footer Social Links */
-    .social-links {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column; /* Buttons ko stack karne ke liye */
+        width: 100%;
+        padding: 0;
+        gap: 10px; /* Buttons ke beech ka vertical space */
+        align-items: center;
+    }
+
+    .nav-links li {
+        width: 80%; /* Buttons ki width mobile par thodi badi dikhegi */
+        text-align: center;
+    }
+
+    /* Navbar buttons setting */
+    .nav-links li a {
+        display: block; /* Poore space ko clickable banane ke liye */
+        padding: 10px 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Hero section buttons spacing */
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .hero-btns .btn {
+        width: 200px; /* Mobile par buttons ek barabar size ke dikhenge */
     }
 }
+
