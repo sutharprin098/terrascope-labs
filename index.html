@@ -15,6 +15,7 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html" class="nav-btn">Projects</a></li>
+            <li><a href="order.html" class="nav-btn-outline">Order</a></li>
             <li><a href="contact.html" class="nav-btn">Contact</a></li>
             <li><a href="policy.html" class="nav-btn-outline">Policy</a></li>
         </ul>
@@ -22,17 +23,36 @@
 </header>
 
 <main>
-    <section id="home" class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200') no-repeat center center/cover;">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero"
+        style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200')
+        no-repeat center center/cover;">
+
         <div class="container">
             <h1>Smart GIS Solutions for a <span class="orange">Smarter World</span></h1>
             <p style="color: #ddd;">Expert Mapping & Spatial Intelligence</p>
+
             <div class="hero-btns">
-                <a href="projects.html" class="btn btn-orange">View Portfolio</a>
-                <a href="contact.html" class="btn btn-outline" style="color: white; border-color: white;">Hire Me</a>
+                <a href="projects.html" class="btn btn-outline"
+                   style="color: white; border-color: white;">
+                   View Portfolio
+                </a>
+
+                <a href="order.html" class="btn btn-orange">
+                   Order City Map
+                </a>
+
+                <a href="contact.html" class="btn btn-outline"
+                   style="color: white; border-color: white;">
+                   Hire Me
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services" class="services container" style="padding: 80px 0;">
         <h2 class="section-title">Core Services</h2>
         <div class="grid">
@@ -40,7 +60,7 @@
                 <div class="icon">🛰️</div>
                 <h3>Remote Sensing</h3>
                 <p>NDVI, NDWI, and change detection using satellite imagery.</p>
-                            </div>
+            </div>
             <div class="card service-card">
                 <div class="icon">📊</div>
                 <h3>GEE Dashboards</h3>
@@ -50,7 +70,7 @@
                 <div class="icon">🗺️</div>
                 <h3>GIS Mapping</h3>
                 <p>Thematic mapping and spatial analysis using QGIS/ArcGIS.</p>
-                            </div>
+            </div>
             <div class="card service-card">
                 <div class="icon">🎨</div>
                 <h3>Graphic Design</h3>
@@ -69,12 +89,13 @@
         </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="portfolio gray-bg">
         <div class="container">
             <h2 class="section-title">Project Highlights</h2>
             <div class="grid">
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=400" alt="Mapping Jharkhand">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=400">
                     <div class="p-content">
                         <span class="tag qgis">QGIS</span>
                         <h4>Mapping Jharkhand</h4>
@@ -82,7 +103,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400" alt="LULC Map">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400">
                     <div class="p-content">
                         <span class="tag rs">Remote Sensing</span>
                         <h4>LULC Map (1998)</h4>
@@ -90,65 +111,50 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400" alt="GEE Dashboard">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400">
                     <div class="p-content">
                         <span class="tag gee">GEE</span>
                         <h4>Rainfall Dashboard</h4>
                         <p>Interactive data visualization with Earth Engine.</p>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400" alt="Design">
-                    <div class="p-content">
-                        <span class="tag design">Design</span>
-                        <h4>Event Poster Design</h4>
-                        <p>Creative layouts and event visual branding.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=400" alt="Survey">
-                    <div class="p-content">
-                        <span class="tag survey">Survey</span>
-                        <h4>Jaisalmer Field Report</h4>
-                        <p>Detailed study of Sam & Tanot villages.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1561484930-998b6a7b22e8?q=80&w=400" alt="Climate">
-                    <div class="p-content">
-                        <span class="tag rs">Analysis</span>
-                        <h4>Temperature Tracking</h4>
-                        <p>Tracking change: July 2020 vs July 2024.</p>
-                    </div>
-                </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
+
+            <div style="text-align:center; margin-top:40px;">
                 <a href="projects.html" class="btn btn-outline">Explore All Projects</a>
             </div>
         </div>
     </section>
+
 </main>
 
 <footer>
     <div class="container" style="text-align: center; padding: 40px 0;">
-        <p style="font-weight: 700; margin-bottom: 15px;">© 2025 TerraScope Labs | All Rights Reserved</p>
-        
+        <p style="font-weight: 700; margin-bottom: 15px;">
+            © 2025 TerraScope Labs | All Rights Reserved
+        </p>
+
         <div class="social-links" style="margin-bottom: 20px;">
-            <a href="https://www.linkedin.com/company/terrascope-labs/" target="_blank" style="margin: 0 10px; text-decoration: none; color: #0077b5; font-weight: 600;">
-                LinkedIn
+            <a href="https://www.linkedin.com/company/terrascope-labs/" target="_blank"
+               style="margin: 0 10px; color: #0077b5; font-weight: 600;">
+               LinkedIn
             </a>
-            <a href="https://www.instagram.com/terrascopelabs" target="_blank" style="margin: 0 10px; text-decoration: none; color: #e4405f; font-weight: 600;">
-                Instagram
+            <a href="https://www.instagram.com/terrascopelabs" target="_blank"
+               style="margin: 0 10px; color: #e4405f; font-weight: 600;">
+               Instagram
             </a>
         </div>
 
-        <div style="margin-top: 10px;">
-            <a href="policy.html" style="color: #888; text-decoration: none; font-size: 14px; border-bottom: 1px solid #eee;">Privacy Policy</a>
-        </div>
+        <a href="policy.html"
+           style="color:#888; text-decoration:none; font-size:14px;">
+           Privacy Policy
+        </a>
     </div>
 </footer>
 
 </body>
 </html>
+
+
 
 
