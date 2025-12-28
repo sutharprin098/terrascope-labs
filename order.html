@@ -1,141 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Custom City Map | TerraScope Labs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Custom City Map | TerraScope Labs</title>
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
-    <nav class="container">
-        <div class="logo">TERRA<span>SCOPE</span> LABS</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html" class="nav-btn">Projects</a></li>
-            <li><a href="order.html" class="nav-btn-outline">Order</a></li>
-            <li><a href="contact.html" class="nav-btn">Contact</a></li>
-        </ul>
-    </nav>
+<nav class="container">
+<div class="logo">TERRA<span>SCOPE</span> LABS</div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="projects.html" class="nav-btn">Projects</a></li>
+<li><a href="order.html" class="nav-btn-outline">Order</a></li>
+<li><a href="contact.html" class="nav-btn">Contact</a></li>
+</ul>
+</nav>
 </header>
 
-<!-- ================= MAIN ================= -->
 <main>
-
 <section class="gray-bg">
-    <div class="container" style="max-width:900px;">
+<div class="container" style="max-width:900px;">
 
-        <div class="service-card" style="border-top:6px solid var(--orange);">
+<div class="service-card" style="border-top:6px solid var(--orange);">
 
-            <h1 class="orange" style="margin-bottom:10px;">Order Your Custom City Map</h1>
-            <p style="color:#666; margin-bottom:30px;">
-                Minimal city map posters for any city in India or worldwide.
-            </p>
+<h1 class="orange">Order Your Custom City Map</h1>
+<p style="color:#666;margin-bottom:25px;">
+Any city. Minimal design. Print-ready map posters.
+</p>
 
-            <!-- Poster Preview -->
-            <div style="text-align:center; margin-bottom:35px;">
-                <img src="Untitled design.jpg"
-                     alt="City Map Poster"
-                     style="max-width:100%; border:1px solid #eee; border-radius:6px;">
-            </div>
+<img src="Untitled design.jpg" alt="City Map Poster"
+style="width:100%;border-radius:6px;margin-bottom:30px;">
 
-            <!-- ================= ORDER FORM ================= -->
-            <form class="order-form" onsubmit="sendWhatsApp(); return false;">
+<form class="order-form" oninput="calculateTotal()">
 
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                </div>
+<!-- PHONE NUMBER (TOP) -->
+<div class="form-group">
+<label>WhatsApp Number</label>
+<input type="text" id="phone" placeholder="e.g. 9509706699" required>
+</div>
 
-                <div class="form-group">
-                    <label>City Name</label>
-                    <input type="text" id="city" placeholder="Any city you want" required>
-                </div>
+<div class="form-group">
+<label>Your Name</label>
+<input type="text" id="custName" required>
+</div>
 
-                <div class="form-group">
-                    <label>State / Country</label>
-                    <input type="text" id="region" placeholder="Optional">
-                </div>
+<div class="form-group">
+<label>City Name</label>
+<input type="text" id="cityName" required>
+</div>
 
-                <div class="form-group">
-                    <label>Poster Size</label>
-                    <select id="size">
-                        <option>A4</option>
-                        <option>A3</option>
-                        <option>A2</option>
-                    </select>
-                </div>
+<div class="form-group">
+<label>Map Type</label>
+<select id="type">
+<option value="299">Digital File – ₹299</option>
+<option value="499">A4 Print – ₹499</option>
+<option value="799">A3 Print – ₹799</option>
+<option value="1499">A2 Print – ₹1499</option>
+</select>
+</div>
 
-                <div class="form-group">
-                    <label>Frame Option</label>
-                    <select id="frame">
-                        <option>Without Frame</option>
-                        <option>With Frame</option>
-                    </select>
-                </div>
+<div class="form-group">
+<label>Frame Option</label>
+<select id="frame">
+<option value="0">Without Frame</option>
+<option value="400">With Frame (+₹400)</option>
+</select>
+</div>
 
-                <div class="form-group">
-                    <label>Delivery Address / Notes</label>
-                    <textarea id="address" rows="4"
-                              placeholder="Delivery details or customization notes"></textarea>
-                </div>
+<div class="form-group">
+<label>Delivery Address / Notes</label>
+<textarea id="address" rows="4"></textarea>
+</div>
 
-                <button type="submit" class="btn btn-orange order-btn">
-                    Order via WhatsApp
-                </button>
+<!-- PRICE SUMMARY (INFO ONLY) -->
+<div style="background:#f9f9f9;padding:20px;border-radius:8px;margin:25px 0;">
+<p><strong>Base Price:</strong> ₹<span id="basePrice">299</span></p>
+<p><strong>Frame Charges:</strong> ₹<span id="framePrice">0</span></p>
+<hr style="margin:10px 0;">
+<h2>Total Amount: ₹<span id="totalPrice">299</span></h2>
+<p style="font-size:13px;opacity:0.6;">
+Payment will be discussed on WhatsApp
+</p>
+</div>
 
-            </form>
+<button type="button" class="btn btn-orange order-btn" onclick="sendWhatsApp()">
+Send Order on WhatsApp
+</button>
 
-            <p style="font-size:14px; opacity:0.7; text-align:center; margin-top:18px;">
-                ✔ Custom maps for any city &nbsp;|&nbsp; ✔ Print-ready design
-            </p>
+</form>
 
-        </div>
-    </div>
+<p style="text-align:center;font-size:14px;opacity:0.7;margin-top:15px;">
+✔ Custom Maps for Any City &nbsp;|&nbsp; ✔ Fast WhatsApp Support
+</p>
+
+</div>
+</div>
 </section>
-
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-    <div class="container" style="text-align:center; padding:40px 0;">
-        <p style="opacity:0.7; font-size:14px;">
-            © 2025 TerraScope Labs | Geospatial Intelligence & Design
-        </p>
-    </div>
+<div class="container" style="text-align:center;padding:40px 0;">
+<p style="font-size:14px;opacity:0.7;">
+© 2025 TerraScope Labs | Geospatial Intelligence & Design
+</p>
+</div>
 </footer>
 
-<!-- ================= JAVASCRIPT ================= -->
 <script>
-function sendWhatsApp() {
-    var name = document.getElementById("name").value;
-    var city = document.getElementById("city").value;
-    var region = document.getElementById("region").value;
-    var size = document.getElementById("size").value;
-    var frame = document.getElementById("frame").value;
-    var address = document.getElementById("address").value;
+function calculateTotal() {
+  let base = parseInt(document.getElementById("type").value);
+  let frame = parseInt(document.getElementById("frame").value);
 
-    var message =
-        "🗺️ Custom City Map Order\n\n" +
-        "Name: " + name + "\n" +
-        "City: " + city + "\n" +
-        "State / Country: " + region + "\n" +
-        "Poster Size: " + size + "\n" +
-        "Frame Option: " + frame + "\n\n" +
-        "Address / Notes:\n" + address;
-
-    var phone = "919509706699";
-    var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-    window.open(url, "_blank");
+  document.getElementById("basePrice").innerText = base;
+  document.getElementById("framePrice").innerText = frame;
+  document.getElementById("totalPrice").innerText = base + frame;
 }
+
+function sendWhatsApp() {
+  let msg =
+    "🗺️ Custom City Map Order\n\n" +
+    "Phone: " + phone.value + "\n" +
+    "Name: " + custName.value + "\n" +
+    "City: " + cityName.value + "\n" +
+    "Map Type: " + type.options[type.selectedIndex].text + "\n" +
+    "Frame: " + frame.options[frame.selectedIndex].text + "\n" +
+    "Total Amount: ₹" + totalPrice.innerText + "\n\n" +
+    "Address / Notes:\n" + address.value;
+
+  window.open(
+    "https://wa.me/919509706699?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+}
+
+calculateTotal();
 </script>
 
 </body>
