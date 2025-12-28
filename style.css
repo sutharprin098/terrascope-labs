@@ -2,9 +2,11 @@
   --orange: #FF8C00;
   --dark: #1a1a1a;
   --text: #333;
-  --light: #f9f9f9;
+  --light: #f7f7f7;
+  --border: #e5e5e5;
 }
 
+/* ============ RESET ============ */
 * {
   margin: 0;
   padding: 0;
@@ -14,22 +16,21 @@
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
-  line-height: 1.6;
   background: #fff;
+  line-height: 1.6;
 }
 
+/* ============ CONTAINER ============ */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 20px;
 }
 
-/* ================= HEADER ================= */
-
+/* ============ HEADER / NAV ============ */
 header {
   background: #fff;
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -39,6 +40,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 0;
 }
 
 .logo {
@@ -52,21 +54,21 @@ nav {
 }
 
 .nav-links {
+  list-style: none;
   display: flex;
   align-items: center;
   gap: 15px;
-  list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text);
   font-weight: 600;
+  color: var(--text);
 }
 
 .nav-btn {
   background: var(--orange);
-  color: white !important;
+  color: #fff !important;
   padding: 8px 16px;
   border-radius: 5px;
 }
@@ -78,14 +80,14 @@ nav {
   border-radius: 5px;
 }
 
-/* ================= HERO ================= */
-
+/* ============ HERO ============ */
 .hero {
   height: 75vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  color: white;
+  color: #fff;
 }
 
 .hero h1 {
@@ -93,45 +95,50 @@ nav {
   margin-bottom: 15px;
 }
 
-.orange {
-  color: var(--orange);
+.hero p {
+  font-size: 18px;
 }
 
 .hero-btns {
   margin-top: 25px;
   display: flex;
-  justify-content: center;
   gap: 15px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-/* ================= BUTTONS ================= */
+.orange {
+  color: var(--orange);
+}
 
+/* ============ BUTTONS ============ */
 .btn {
+  display: inline-block;
   padding: 12px 30px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 700;
-  display: inline-block;
   transition: 0.3s;
+  cursor: pointer;
+  text-align: center;
 }
 
 .btn-orange {
   background: var(--orange);
-  color: white;
+  color: #fff;
 }
 
 .btn-outline {
   border: 2px solid var(--orange);
   color: var(--orange);
+  background: transparent;
 }
 
-/* ================= SECTIONS ================= */
-
+/* ============ SECTIONS ============ */
 .section-title {
   text-align: center;
-  margin-bottom: 50px;
   font-size: 32px;
+  margin-bottom: 50px;
   font-weight: 700;
 }
 
@@ -140,37 +147,30 @@ nav {
   padding: 80px 0;
 }
 
-/* ================= GRID ================= */
-
+/* ============ GRID ============ */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
-/* ================= SERVICES ================= */
+/* ============ CARDS ============ */
+.service-card,
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
 
 .service-card {
-  background: #fff;
   padding: 35px 25px;
-  border-radius: 12px;
   text-align: center;
   border-top: 4px solid var(--orange);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
 .service-card .icon {
-  font-size: 40px;
+  font-size: 38px;
   margin-bottom: 15px;
-}
-
-/* ================= PROJECTS ================= */
-
-.project-card {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
 .project-card img {
@@ -183,111 +183,84 @@ nav {
   padding: 20px;
 }
 
-/* ================= TAGS ================= */
-
+/* ============ TAGS ============ */
 .tag {
   font-size: 10px;
   font-weight: 800;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 8px;
 }
 
-.qgis { background: #fff0e0; color: #ff8c00; }
-.rs { background: #e0f0ff; color: #007bff; }
-.gee { background: #e0ffe0; color: #28a745; }
-.design { background: #ffe0f0; color: #d63384; }
-.survey { background: #f0e0ff; color: #6f42c1; }
+.qgis { background:#fff0e0; color:#ff8c00; }
+.rs { background:#e0f0ff; color:#007bff; }
+.gee { background:#e0ffe0; color:#28a745; }
+.design { background:#ffe0f0; color:#d63384; }
+.survey { background:#f0e0ff; color:#6f42c1; }
 
-/* ================= ORDER FORM ================= */
-
+/* ============ ORDER FORM ============ */
 .order-form {
   max-width: 600px;
-  margin: 0 auto;
+  margin: auto;
 }
 
-.order-form .form-group {
+.form-group {
   margin-bottom: 18px;
 }
 
-.order-form label {
+.form-group label {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
 }
 
-.order-form input,
-.order-form select,
-.order-form textarea {
+.form-group input,
+.form-group select,
+.form-group textarea {
   width: 100%;
   padding: 12px;
   font-size: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 6px;
 }
 
-.order-form textarea {
+.form-group textarea {
   resize: vertical;
 }
 
 .order-btn {
   width: 100%;
-  font-size: 17px;
-  padding: 14px;
   margin-top: 10px;
 }
 
-/* ================= FOOTER ================= */
-
+/* ============ FOOTER ============ */
 footer {
+  border-top: 1px solid var(--border);
   background: #fff;
-  border-top: 1px solid #eee;
 }
 
-/* ================= MOBILE FIX ================= */
+footer p {
+  opacity: 0.7;
+}
 
+/* ============ MOBILE ============ */
 @media (max-width: 768px) {
-
   .hero {
     height: auto;
     padding: 100px 0;
   }
 
   .hero h1 {
-    font-size: 34px;
-  }
-
-  .nav-links {
-    gap: 10px;
+    font-size: 32px;
   }
 
   .section-title {
     font-size: 26px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .order-form {
-    padding: 0 10px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
   .btn {
     width: 100%;
-    text-align: center;
   }
 
   .hero-btns {
@@ -295,4 +268,16 @@ footer {
   }
 }
 
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
 
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
